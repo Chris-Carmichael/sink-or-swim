@@ -4,6 +4,16 @@ This is a demo application to use for an interview.
 
 ![screenshot](images/practical-record.JPG)
 
+Notes:
+
+- I did a Kustomize pattern instead of Helm because that's what I know.  I went down a bit of a Helm rabbit hole and decided to do this instead in the interest of time.  I might need to ramp up my Helm skills if this is desired.
+
+- I skipped the Ansible task, but have notes as to why [here](ansible/README.md).
+
+- I have some Terraform module design notes [here](terraform/modules/README.md) if you're curious why I chose the path I did.
+
+- You can see some **Optimization Ideas** in the bottom section of this readme for a direction I'd likely take if I kept going with the build.  I'll probably poke at some of this if time permits, so let's talk about it if that's something you're curious about.
+
 ## Install
 
 ```bash

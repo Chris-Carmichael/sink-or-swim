@@ -1,0 +1,34 @@
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: swim
+  namespace: namespace_name
+  labels:
+    app: app_name
+    owner: owner_name
+    environment: environment_name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app_name
+      owner: owner_name
+      environment: environment_name
+  template:
+    metadata:
+      labels:
+        app: app_name
+        owner: owner_name
+        environment: environment_name
+    spec:
+      containers:
+      - name: "swim"
+        image: "353593603949.dkr.ecr.us-west-2.amazonaws.com/swim"
+        resources:
+          requests:
+            memory: "500Mi"
+            cpu: "0.5"
+          limits:
+            memory: "1Gi"
+            cpu: "1"

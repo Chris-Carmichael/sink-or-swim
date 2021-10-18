@@ -16,4 +16,3 @@ spec:
   selector:
     app: "swim"
   type: LoadBalancer
-  #type: NodePort

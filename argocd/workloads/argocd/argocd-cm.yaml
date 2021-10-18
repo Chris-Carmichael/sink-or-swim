@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  repositories: |
+    - insecure: true
+      insecureIgnoreHostKey: true
+      name: sink-or-swim
+      type: git
+      url: https://github.com/Chris-Carmichael/sink-or-swim.git

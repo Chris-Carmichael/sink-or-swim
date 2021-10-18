@@ -90,11 +90,15 @@ tf destroy
 
 - Fix mongodb connection via env vars (for Docker Compose and EKS)
 
-- Wrap Terragrunt around the solution for easier `tf apply` / `tf destroy` workflow.
+- Istio if you want mTLS (for security points)
 
 - Implement ingress controller for `Ingress` types / less load balancers instead of `LoadBalancer` type.
 
 - Implement cert-manager w/LE SSL certs for Ingress, TF R53 bits.
+
+- All kind of EKS security mods around network policy, policy management, RBAC, if this was internet-facing.
+
+- Wrap Terragrunt around the solution for easier `tf apply` / `tf destroy` workflow.
 
 - Add proper ingress for ArgoCD, NodeJS app
 
@@ -105,7 +109,5 @@ tf destroy
 - External secrets workload
 
 - Add Monitoring (Prometheus, Grafana, Loki, Promtail stack)
-
-- Istio if you want mTLS (for security points)
 
 - Dig into MongoDB redundancy options

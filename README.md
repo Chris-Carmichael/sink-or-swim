@@ -22,7 +22,7 @@ cd terraform/vpc
 terraform plan -lock=false
 terraform apply -lock=false -auto-approve
 
-cd ../efs
+cd ../eks
 terraform plan
 terraform apply -auto-approve
 
@@ -33,7 +33,7 @@ docker push 353593603949.dkr.ecr.us-west-2.amazonaws.com/swim:0.0.2
 
 ## ArgoCD Bootstrap (could be done by TF, ran out of time)
 
-# connect to cluster, grab default argo pw, switch context
+# connect to cluster
 aws eks update-kubeconfig --name swim
 
 # configure ArgoCD (add this repo)
@@ -74,11 +74,11 @@ Then visit [http://localhost:3000/](http://localhost:3000/)
 ```bash
 helm template argocd/apps | kubectl delete -f -
 
-cd terraform/efs
-tf destroy
+cd terraform/eks
+tf destroy -auto-approve
 
-cd terraform/vpc
-tf destroy
+cd ../vpc
+tf destroy -lock=false -auto-approve
 
 ```
 
